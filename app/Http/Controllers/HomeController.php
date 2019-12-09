@@ -1,6 +1,6 @@
 <?php
 # @Date:   2019-10-29T12:01:13+00:00
-# @Last modified time: 2019-11-12T14:14:06+00:00
+# @Last modified time: 2019-12-05T20:04:24+00:00
 
 
 
@@ -29,17 +29,13 @@ class HomeController extends Controller
     public function index(Request $request)
     {
 
-        $user = $request->user();
-        $home = 'user.home';
-
-
-        if ($user->hasRole('admin')) {
-            $home = 'admin.home';
-
-        }
-        else{
-          $home = 'user.home';
-        }
-        return redirect()->route($home);
+      $user = $request->user();
+      $home = 'home';
+      if ($user->hasRole('admin')) {
+          $home = 'admin.home';
+      } else if($user->hasRole('doctor')) {
+          $home = 'doctor.doctors.home';
+      } else $home = 'patient.patients.home';
+      return redirect()->route($home);
     }
 }

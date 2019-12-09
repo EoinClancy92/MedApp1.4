@@ -15,6 +15,13 @@
                     @endif
 
                     You are logged in as an admin!
+                    <br />
+                    <br />
+                    <div class="float-right">
+                        <a href="{{ route('admin.doctors.index') }}" class="btn btn-primary">Doctors</a>
+                        <a href="{{ route('admin.patients.index') }}" class="btn btn-primary">Patients</a>
+                        <a href="{{ route('admin.appointments.index') }}" class="btn btn-primary">Appoinments</a>
+                    </div>
                 </div>
             </div>
         </div>

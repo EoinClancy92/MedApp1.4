@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in as an Doctor!
+                    Wecome Doctor!
                 </div>
             </div>
         </div>

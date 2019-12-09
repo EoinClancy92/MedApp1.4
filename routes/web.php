@@ -1,6 +1,6 @@
 <?php
 # @Date:   2019-10-29T11:21:04+00:00
-# @Last modified time: 2019-12-03T17:41:46+00:00
+# @Last modified time: 2019-12-09T16:30:25+00:00
 
 
 
@@ -29,31 +29,28 @@ Route::get('/doctor/home', 'Doctor\HomeController@index')->name('doctor.home');
 Route::get('/patient/home', 'Patient\HomeController@index')->name('patient.home');
 
 //admin CRUD doctors
-Route::get('/admin/doctor/create', 'Admin\DoctorController@create')->name('admin.doctor.create');
-Route::get('/admin/doctor/{id}', 'Admin\DoctorController@show')->name('admin.doctor.show');
-Route::post('/admin/doctor/store', 'Admin\DoctorController@store')->name('admin.doctor.store');
-Route::get('/admin/doctor/{id}/edit', 'Admin\DoctorController@edit')->name('admin.doctor.edit');
-Route::put('/admin/doctor/{id}', 'Admin\DoctorController@update')->name('admin.doctor.update');
-Route::delete('/admin/doctor/{id}', 'Admin\DoctorController@destroy')->name('admin.doctor.destroy');
+Route::get('/admin/doctors', 'Admin\DoctorController@index')->name('admin.doctors.index');
+Route::get('/admin/doctors/create', 'Admin\DoctorController@create')->name('admin.doctors.create');
+Route::get('/admin/doctors/{id}', 'Admin\DoctorController@show')->name('admin.doctors.show');
+Route::post('/admin/doctors/store', 'Admin\DoctorController@store')->name('admin.doctors.store');
+Route::get('/admin/doctors/{id}/edit', 'Admin\DoctorController@edit')->name('admin.doctors.edit');
+Route::put('/admin/doctors/{id}', 'Admin\DoctorController@update')->name('admin.doctors.update');
+Route::delete('/admin/doctors/{id}', 'Admin\DoctorController@destroy')->name('admin.doctors.destroy');
 
 //admin CRUD patient
-Route::get('/admin/patient/create', 'Admin\PatientController@create')->name('admin.patient.create');
-Route::get('/admin/patient/{id}', 'Admin\PatientController@show')->name('admin.patient.show');
-Route::post('/admin/patient/store', 'Admin\PatientController@store')->name('admin.patient.store');
-Route::get('/admin/patient/{id}/edit', 'Admin\PatientController@edit')->name('admin.patient.edit');
-Route::put('/admin/patient/{id}', 'Admin\PatientController@update')->name('admin.patient.update');
-Route::delete('/admin/patient/{id}', 'Admin\PatientController@destroy')->name('admin.patient.destroy');
+Route::get('/admin/patients', 'Admin\PatientController@index')->name('admin.patients.index');
+Route::get('/admin/patients/create', 'Admin\PatientController@create')->name('admin.patients.create');
+Route::get('/admin/patients/{id}', 'Admin\PatientController@show')->name('admin.patients.show');
+Route::post('/admin/patients/store', 'Admin\PatientController@store')->name('admin.patients.store');
+Route::get('/admin/patients/{id}/edit', 'Admin\PatientController@edit')->name('admin.patients.edit');
+Route::put('/admin/patients/{id}', 'Admin\PatientController@update')->name('admin.patients.update');
+Route::delete('/admin/patients/{id}', 'Admin\PatientController@destroy')->name('admin.patients.destroy');
 
 //admin CRUD appointments
+Route::get('/admin/appointments', 'Admin\AppointmentController@index')->name('admin.appointments.index');
 Route::get('/admin/appointments/create', 'Admin\AppointmentController@create')->name('admin.appointments.create');
 Route::get('/admin/appointments/{id}', 'Admin\AppointmentController@show')->name('admin.appointments.show');
 Route::post('/admin/appointments/store', 'Admin\AppointmentController@store')->name('admin.appointments.store');
 Route::get('/admin/appointments/{id}/edit', 'Admin\AppointmentController@edit')->name('admin.appointments.edit');
 Route::put('/admin/appointments/{id}', 'Admin\AppointmentController@update')->name('admin.appointments.update');
 Route::delete('/admin/appointments/{id}', 'Admin\AppointmentController@destroy')->name('admin.appointments.destroy');
-
-//patient CRD appointments
-Route::get('/user/appointments/create', 'User\AppointmentController@create')->name('user.appointments.create');
-Route::get('/user/appointments/{id}', 'User\AppointmentController@show')->name('user.appointments.show');
-Route::post('/user/appointments/store', 'User\AppointmentController@store')->name('user.appointment.store');
-Route::delete('/user/appointments/{id}', 'User\AppointmentController@destroy')->name('user.appointments.destroy');

@@ -1,6 +1,6 @@
 <?php
 # @Date:   2019-10-29T13:23:14+00:00
-# @Last modified time: 2019-10-29T14:26:12+00:00
+# @Last modified time: 2019-12-05T18:48:55+00:00
 
 
 
@@ -24,7 +24,7 @@ class CreateUserRoleTable extends Migration
             $table->bigInteger('role_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('restrict');
+            $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreign('role_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('restrict');
         });
     }
